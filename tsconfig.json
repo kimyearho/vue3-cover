@@ -1,0 +1,32 @@
+{
+    "include": ["src/electron/**/*", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "useDefineForClassFields": true,
+        "moduleResolution": "node",
+        "jsx": "preserve",
+        "strict": true,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "lib": ["esnext", "dom"],
+        "outDir": "dist/electron",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/components": ["./src/components"],
+            "@/hooks": ["./src/hooks"]
+        }
+    },
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
+}

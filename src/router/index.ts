@@ -3,8 +3,8 @@ import { createWebHistory, createRouter } from 'vue-router'
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: () => import('../pages/main/index.vue'),
+        name: 'Search',
+        component: () => import('../pages/search/SearchItemList.vue'),
     },
 ]
 

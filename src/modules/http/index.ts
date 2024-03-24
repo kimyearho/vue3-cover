@@ -1,13 +1,12 @@
 import axios from 'axios'
 
 const service = axios.create({
-    baseURL: 'http://127.0.0.1:8090/api/collections',
+    withCredentials: true,
     timeout: 5000,
     headers: {
-        'Accept-Version': 1,
-        Accept: 'application/json',
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Credentials': true
     },
 })
 

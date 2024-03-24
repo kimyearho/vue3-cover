@@ -6,9 +6,18 @@ import { computed } from 'vue'
 
 // Custom hook
 const { data, isPending, isSuccess, isError, error } = useFetch('queryKey', {
-    url: '/users/records',
-    params: {},
+    url: '/api/search',
+    params: {
+        part: 'snippet',
+        q: 'music',
+        type: 'video,playlist,channel',
+        maxResults: 20,
+        safeSearch: 'strict',
+        key: 'AIzaSyBGf5faKOkeLceCwRfN0fv4LJ1CWKrjG-U',
+    },
 })
+
+console.log(data)
 
 const count = ref<number>(0)
 const num1 = ref<number>(50)
@@ -49,7 +58,7 @@ const increment = () => {
             <br />
             <br />
 
-            <v-sheet class="pa-2 ma-2">
+            <!-- <v-sheet class="pa-2 ma-2">
                 <h2>사용자 리스트 (useQuery)</h2>
                 <div v-if="isPending"><h1>Loading...</h1></div>
                 <div v-else-if="isError">An error has occurred: {{ error }}</div>
@@ -60,7 +69,7 @@ const increment = () => {
                         </li>
                     </ul>
                 </div>
-            </v-sheet>
+            </v-sheet> -->
         </v-col>
 
         <v-col>

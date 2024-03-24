@@ -13,7 +13,7 @@ const useFetch = (queryKey: string, options?: IOption) => {
     const { data, isPending, isSuccess, isError, error } = useQuery({
         queryKey: [queryKey],
         queryFn: () => fetcher(options),
-        retry: 3,
+        retry: false,
         retryDelay: 3000,
         staleTime: 300000, // 5 minute
     })
